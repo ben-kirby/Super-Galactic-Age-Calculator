@@ -4,10 +4,12 @@ describe('Person', function(){
 
   let newPerson;
   let olderPerson;
+  let negativeAge;
 
   beforeEach(function(){
     newPerson = new Person("1991-07-24", "2019-01-11", "male"); //27 years old
     olderPerson = new Person("1850-07-24", "2019-01-11", "female"); //168 years old
+    negativeAge = new Person("2019-01-11", "1991-07-24", "female");
   });
 
   it('takes a date and stores it as a date object', function(){
@@ -58,6 +60,10 @@ describe('Person', function(){
   it('calculates their remaining time alive in jupiter years', function(){
     expect(newPerson.lifeExpectancy.timeLeft()).toEqual(4);
     expect(olderPerson.lifeExpectancy.timeLeft()).toEqual(-7);
+  });
+
+  it('prompts the user to enter a non-negative age if their age is below 0', function(){
+    expect(negativeAge.grimReaper()).toEqual("You're -27? A regular Benjamin Button. Try entering a non-negative age.")
   });
 
 });

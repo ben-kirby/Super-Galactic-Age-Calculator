@@ -8,7 +8,12 @@ class Person {
   }
 
   grimReaper(){
-
+    if (this.age.birthDate <= this.age.inputDate) {
+      return true;
+    }
+    else {
+      return `You're ${Math.ceil((this.age.inputDate - this.age.birthDate) / 31536000000)}? A regular Benjamin Button. Try entering a non-negative age.`
+    }
   }
 }
 
