@@ -26,25 +26,29 @@ describe('Age', function(){
   it('takes a date and returns their age in Mercury years', function(){
     newPerson.mercuryAgeCalculator();
     olderPerson.mercuryAgeCalculator();
-    expect(newPerson.mercuryAge).toEqual(112);
-    expect(olderPerson.mercuryAge).toEqual(700);
+    expect(newPerson.mercuryAge).toEqual(114);
+    expect(olderPerson.mercuryAge).toEqual(702);
   });
 
   it('takes a date and returns their age in Venus years', function(){
     newPerson.venusAgeCalculator();
     olderPerson.venusAgeCalculator();
-    expect(newPerson.venusAge).toEqual(43);
-    expect(olderPerson.venusAge).toEqual(270);
+    expect(newPerson.venusAge).toEqual(44);
+    expect(olderPerson.venusAge).toEqual(271);
   });
 
   it('takes a date and returns their age in Mars years', function(){
-    expect(newPerson.mars()).toEqual(14);
-    expect(olderPerson.mars()).toEqual(89);
+    newPerson.marsAgeCalculator();
+    olderPerson.marsAgeCalculator();
+    expect(newPerson.marsAge).toEqual(14);
+    expect(olderPerson.marsAge).toEqual(89);
   });
 
   it('takes a date and returns their age in Jupiter years', function(){
-    expect(newPerson.jupiter()).toEqual(2);
-    expect(olderPerson.jupiter()).toEqual(14);
+    newPerson.jupiterAgeCalculator();
+    olderPerson.jupiterAgeCalculator();
+    expect(newPerson.jupiterAge).toEqual(2);
+    expect(olderPerson.jupiterAge).toEqual(14);
   });
 
   it('calculates their remaining time alive in earth years', function(){

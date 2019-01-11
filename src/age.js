@@ -21,16 +21,18 @@ class Age {
 
   earthAgeCalculator(){
     const preciseEarthAge = (this.inputDate - this.birthDate) / 31536000000;
-    this.earthAge = Math.floor(calculatedEarthAge);
+    this.earthAge = Math.floor(preciseEarthAge);
     return preciseEarthAge;
   }
 
   marsAgeCalculator(){
     const marsModifier = 1.88;
+    this.marsAge = Math.floor(this.earthAgeCalculator() / marsModifier);
   }
 
   jupiterAgeCalculator(){
     const jupiterModifier = 11.86;
+    this.jupiterAge = Math.floor(this.earthAgeCalculator() / jupiterModifier);
   }
 
 }
