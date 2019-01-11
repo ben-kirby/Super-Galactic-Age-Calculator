@@ -17,18 +17,24 @@ describe('Age', function(){
   });
 
   it('takes a date and returns their age in Earth years', function(){
-    expect(newPerson.earthAge()).toEqual(27);
-    expect(olderPerson.earthAge()).toEqual(168);
+    newPerson.earthAgeCalculator();
+    olderPerson.earthAgeCalculator();
+    expect(newPerson.earthAge).toEqual(27);
+    expect(olderPerson.earthAge).toEqual(168);
   });
 
   it('takes a date and returns their age in Mercury years', function(){
-    expect(newPerson.mercury()).toEqual(112);
-    expect(olderPerson.mercury()).toEqual(700);
+    newPerson.mercuryAgeCalculator();
+    olderPerson.mercuryAgeCalculator();
+    expect(newPerson.mercuryAge).toEqual(112);
+    expect(olderPerson.mercuryAge).toEqual(700);
   });
 
   it('takes a date and returns their age in Venus years', function(){
-    expect(newPerson.venus()).toEqual(43);
-    expect(olderPerson.venus()).toEqual(270);
+    newPerson.venusAgeCalculator();
+    olderPerson.venusAgeCalculator();
+    expect(newPerson.venusAge).toEqual(43);
+    expect(olderPerson.venusAge).toEqual(270);
   });
 
   it('takes a date and returns their age in Mars years', function(){
