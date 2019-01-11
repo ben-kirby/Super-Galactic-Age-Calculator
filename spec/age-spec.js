@@ -1,24 +1,24 @@
-import { Person  } from './../src/person';
+import { Age } from './../src/age.js';
 
-describe('Person', function(){
+describe('Age', function(){
 
   let newPerson;
   let olderPerson;
 
   beforeEach(function(){
-    newPerson = new Person("1991-07-24"); //(27)
-    olderPerson = new Person("1850-07-24"); //168
+    newPerson = new Age("1991-07-24", "2019-01-11"); //(27)
+    olderPerson = new Age("1850-07-24", "2019-01-11"); //168
   });
 
   it('takes a date and stores it as a date object', function(){
-    expect(newPerson.getUTCFullYear()).toEqual(1991);
-    expect(newPerson.getUTCMonth()).toEqual(6);
-    expect(newPerson.getUTCDate()).toEqual(24);
+    expect(newPerson.birthDate.getUTCFullYear()).toEqual(1991);
+    expect(newPerson.birthDate.getUTCMonth()).toEqual(6);
+    expect(newPerson.birthDate.getUTCDate()).toEqual(24);
   });
 
   it('takes a date and returns their age in Earth years', function(){
-    expect(newPerson.earth()).toEqual(27);
-    expect(olderPerson.earth()).toEqual(168);
+    expect(newPerson.earthAge()).toEqual(27);
+    expect(olderPerson.earthAge()).toEqual(168);
   });
 
   it('takes a date and returns their age in Mercury years', function(){
