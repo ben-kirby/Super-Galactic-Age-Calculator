@@ -9,32 +9,25 @@ class Age {
     this.jupiterAge = 0;
   }
 
-  mercuryAgeCalculator(){
+  ageCalculator(){
     const mercuryModifier = 0.24;
-    this.mercuryAge = Math.floor(this.earthAgeCalculator() / mercuryModifier);
-  }
-
-  venusAgeCalculator(){
     const venusModifier = 0.62;
-    this.venusAge = Math.floor(this.earthAgeCalculator() / venusModifier);
-  }
-
-  earthAgeCalculator(){
-    const preciseEarthAge = (this.inputDate - this.birthDate) / 31536000000;
-    this.earthAge = Math.floor(preciseEarthAge);
-    return preciseEarthAge;
-  }
-
-  marsAgeCalculator(){
+    const earthModifier = 1;
     const marsModifier = 1.88;
-    this.marsAge = Math.floor(this.earthAgeCalculator() / marsModifier);
-  }
-
-  jupiterAgeCalculator(){
     const jupiterModifier = 11.86;
-    this.jupiterAge = Math.floor(this.earthAgeCalculator() / jupiterModifier);
+
+    this.mercuryAge = this.planetAgeModifier(mercuryModifier)
+    this.venusAge = this.planetAgeModifier(venusModifier)
+    this.earthAge = this.planetAgeModifier(earthModifier)
+    this.marsAge = this.planetAgeModifier(marsModifier)
+    this.jupiterAge = this.planetAgeModifier(jupiterModifier)
   }
 
+  planetAgeModifier(modifier){
+    const msInYear = 31536000000;
+
+    return Math.floor(((this.inputDate - this.birthDate) / msInYear) / modifier);
+  }
 }
 
 

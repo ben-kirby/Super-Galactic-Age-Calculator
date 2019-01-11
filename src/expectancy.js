@@ -13,7 +13,6 @@ class Expectancy {
     const venusModifier = 0.62;
     const marsModifier = 1.88;
     const jupiterModifier = 11.86;
-
     const earthExpectancy = this.expectancyCalculator();
 
     this.mercuryExpectancy = Math.floor(earthExpectancy / mercuryModifier);
@@ -35,10 +34,6 @@ class Expectancy {
 
     return calculatedEarthExpectancy;
   }
-
-
-
-
 }
 
 export {Expectancy};

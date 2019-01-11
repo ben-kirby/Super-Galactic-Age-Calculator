@@ -16,37 +16,17 @@ describe('Person', function(){
     expect(newPerson.age.birthDate.getUTCDate()).toEqual(24);
   });
 
-  it('takes a date and returns their age in Earth years', function(){
-    newPerson.age.earthAgeCalculator();
-    olderPerson.age.earthAgeCalculator();
-    expect(newPerson.age.earthAge).toEqual(27);
-    expect(olderPerson.age.earthAge).toEqual(168);
-  });
-
-  it('takes a date and returns their age in Mercury years', function(){
-    newPerson.age.mercuryAgeCalculator();
-    olderPerson.age.mercuryAgeCalculator();
+  it('takes a date and returns their age for all the planets', function(){
+    newPerson.age.ageCalculator();
+    olderPerson.age.ageCalculator();
     expect(newPerson.age.mercuryAge).toEqual(114);
     expect(olderPerson.age.mercuryAge).toEqual(702);
-  });
-
-  it('takes a date and returns their age in Venus years', function(){
-    newPerson.age.venusAgeCalculator();
-    olderPerson.age.venusAgeCalculator();
     expect(newPerson.age.venusAge).toEqual(44);
     expect(olderPerson.age.venusAge).toEqual(271);
-  });
-
-  it('takes a date and returns their age in Mars years', function(){
-    newPerson.age.marsAgeCalculator();
-    olderPerson.age.marsAgeCalculator();
+    expect(newPerson.age.earthAge).toEqual(27);
+    expect(olderPerson.age.earthAge).toEqual(168);
     expect(newPerson.age.marsAge).toEqual(14);
     expect(olderPerson.age.marsAge).toEqual(89);
-  });
-
-  it('takes a date and returns their age in Jupiter years', function(){
-    newPerson.age.jupiterAgeCalculator();
-    olderPerson.age.jupiterAgeCalculator();
     expect(newPerson.age.jupiterAge).toEqual(2);
     expect(olderPerson.age.jupiterAge).toEqual(14);
   });

@@ -6,6 +6,10 @@ class Person {
     this.age = new Age(birthDate, inputDate)
     this.expectancy = new Expectancy(gender);
   }
+
+  grimReaper(){
+
+  }
 }
 
 export {Person};
