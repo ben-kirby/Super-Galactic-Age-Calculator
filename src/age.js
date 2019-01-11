@@ -1,26 +1,15 @@
 class Age {
-  constructor(birthDate, inputDate) {
+  constructor(birthDate, inputDate, modifierArray, planetArray) {
+    this.modifierArray = modifierArray;
     this.birthDate = new Date(birthDate);
     this.inputDate = new Date(inputDate);
-    this.mercuryAge = 0;
-    this.venusAge = 0;
-    this.earthAge = 0;
-    this.marsAge = 0;
-    this.jupiterAge = 0;
+    this.planetAgeArray = planetArray;
   }
 
   ageCalculator(){
-    const mercuryModifier = 0.24;
-    const venusModifier = 0.62;
-    const earthModifier = 1;
-    const marsModifier = 1.88;
-    const jupiterModifier = 11.86;
-
-    this.mercuryAge = this.planetAgeModifier(mercuryModifier)
-    this.venusAge = this.planetAgeModifier(venusModifier)
-    this.earthAge = this.planetAgeModifier(earthModifier)
-    this.marsAge = this.planetAgeModifier(marsModifier)
-    this.jupiterAge = this.planetAgeModifier(jupiterModifier)
+    for (var i = 0; i < this.planetAgeArray.length; i++) {
+      this.planetAgeArray[i] = this.planetAgeModifier(this.modifierArray[i])
+    }
   }
 
   planetAgeModifier(modifier){

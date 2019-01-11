@@ -12,56 +12,52 @@ describe('Person', function(){
     negativeAge = new Person("2019-01-11", "1991-07-24", "female");
   });
 
+//1
   it('takes a date and stores it as a date object', function(){
     expect(newPerson.age.birthDate.getUTCFullYear()).toEqual(1991);
     expect(newPerson.age.birthDate.getUTCMonth()).toEqual(6);
     expect(newPerson.age.birthDate.getUTCDate()).toEqual(24);
   });
 
+//2
   it('takes a date and returns their age for all the planets', function(){
     newPerson.age.ageCalculator();
     olderPerson.age.ageCalculator();
-    expect(newPerson.age.mercuryAge).toEqual(114);
-    expect(olderPerson.age.mercuryAge).toEqual(702);
-    expect(newPerson.age.venusAge).toEqual(44);
-    expect(olderPerson.age.venusAge).toEqual(271);
-    expect(newPerson.age.earthAge).toEqual(27);
-    expect(olderPerson.age.earthAge).toEqual(168);
-    expect(newPerson.age.marsAge).toEqual(14);
-    expect(olderPerson.age.marsAge).toEqual(89);
-    expect(newPerson.age.jupiterAge).toEqual(2);
-    expect(olderPerson.age.jupiterAge).toEqual(14);
+    expect(newPerson.age.planetAgeArray).toEqual([114, 44, 27, 14, 2]);
+    expect(olderPerson.age.planetAgeArray).toEqual([702, 271, 168, 89, 14]);
   });
 
+//3
   it('calculates their remaining time alive on all planets', function(){
     newPerson.expectancy.expectancyModifier();
-    expect(newPerson.expectancy.mercuryExpectancy).toEqual(284);
-    expect(newPerson.expectancy.venusExpectancy).toEqual(110);
-    expect(newPerson.expectancy.earthExpectancy).toEqual(68);
-    expect(newPerson.expectancy.marsExpectancy).toEqual(36);
-    expect(newPerson.expectancy.jupiterExpectancy).toEqual(5);
+    expect(newPerson.expectancy.planetExpectancyArray).toEqual([284, 110, 68, 36, 5]);
   });
 
+//4
   it('calculates their remaining time alive in mercury years', function(){
-    expect(newPerson.lifeExpectancy.timeLeft()).toEqual(220);
-    expect(olderPerson.lifeExpectancy.timeLeft()).toEqual(-336);
+    expect(newPerson.expectancy.timeLeft()).toEqual(220);
+    expect(olderPerson.expectancy.timeLeft()).toEqual(-336);
   });
 
+//5
   it('calculates their remaining time alive in venus years', function(){
-    expect(newPerson.lifeExpectancy.timeLeft()).toEqual(85);
-    expect(olderPerson.lifeExpectancy.timeLeft()).toEqual(-141);
+    expect(newPerson.expectancy.timeLeft()).toEqual(85);
+    expect(olderPerson.expectancy.timeLeft()).toEqual(-141);
   });
 
+//6
   it('calculates their remaining time alive in mars years', function(){
-    expect(newPerson.lifeExpectancy.timeLeft()).toEqual(28);
-    expect(olderPerson.lifeExpectancy.timeLeft()).toEqual(-46);
+    expect(newPerson.expectancy.timeLeft()).toEqual(28);
+    expect(olderPerson.expectancy.timeLeft()).toEqual(-46);
   });
 
+//7
   it('calculates their remaining time alive in jupiter years', function(){
-    expect(newPerson.lifeExpectancy.timeLeft()).toEqual(4);
-    expect(olderPerson.lifeExpectancy.timeLeft()).toEqual(-7);
+    expect(newPerson.expectancy.timeLeft()).toEqual(4);
+    expect(olderPerson.expectancy.timeLeft()).toEqual(-7);
   });
 
+//8
   it('prompts the user to enter a non-negative age if their age is below 0', function(){
     expect(negativeAge.grimReaper()).toEqual("You're -27? A regular Benjamin Button. Try entering a non-negative age.")
   });

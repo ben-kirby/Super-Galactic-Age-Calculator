@@ -1,25 +1,16 @@
 class Expectancy {
-  constructor(gender) {
-    this.mercuryExpectancy = 0;
-    this.venusExpectancy = 0;
-    this.earthExpectancy = 0;
-    this.marsExpectancy = 0;
-    this.jupiterExpectancy = 0;
+  constructor(gender, modifierArray, planetArray) {
+    this.planetExpectancyArray = planetArray;
+    this.modifierArray = modifierArray;
     this.gender = gender;
   }
 
   expectancyModifier(){
-    const mercuryModifier = 0.24;
-    const venusModifier = 0.62;
-    const marsModifier = 1.88;
-    const jupiterModifier = 11.86;
     const earthExpectancy = this.expectancyCalculator();
 
-    this.mercuryExpectancy = Math.floor(earthExpectancy / mercuryModifier);
-    this.venusExpectancy = Math.floor(earthExpectancy / venusModifier);
-    this.earthExpectancy = Math.floor(earthExpectancy);
-    this.marsExpectancy = Math.floor(earthExpectancy / marsModifier);
-    this.jupiterExpectancy = Math.floor(earthExpectancy / jupiterModifier);
+    for (var i = 0; i < this.planetExpectancyArray.length; i++) {
+      this.planetExpectancyArray[i] = Math.floor(earthExpectancy / this.modifierArray[i]);
+    }
   }
 
   expectancyCalculator(){
@@ -31,7 +22,6 @@ class Expectancy {
     else {
       calculatedEarthExpectancy = 72.6;
     }
-
     return calculatedEarthExpectancy;
   }
 }
