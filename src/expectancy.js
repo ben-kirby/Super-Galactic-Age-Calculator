@@ -1,6 +1,6 @@
 class Expectancy {
-  constructor(gender, modifierArray, planetArray) {
-    this.planetExpectancyArray = planetArray;
+  constructor(gender, modifierArray) {
+    this.planetExpectancyArray = [0,0,0,0,0];
     this.modifierArray = modifierArray;
     this.gender = gender;
   }
@@ -11,6 +11,8 @@ class Expectancy {
     for (var i = 0; i < this.planetExpectancyArray.length; i++) {
       this.planetExpectancyArray[i] = Math.floor(earthExpectancy / this.modifierArray[i]);
     }
+
+    return this.planetExpectancyArray;
   }
 
   expectancyCalculator(){

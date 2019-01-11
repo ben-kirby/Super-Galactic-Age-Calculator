@@ -12,7 +12,7 @@ describe('Person', function(){
     negativeAge = new Person("2019-01-11", "1991-07-24", "female");
   });
 
-//1
+// 1
   it('takes a date and stores it as a date object', function(){
     expect(newPerson.age.birthDate.getUTCFullYear()).toEqual(1991);
     expect(newPerson.age.birthDate.getUTCMonth()).toEqual(6);
@@ -33,31 +33,16 @@ describe('Person', function(){
     expect(newPerson.expectancy.planetExpectancyArray).toEqual([284, 110, 68, 36, 5]);
   });
 
-//4
-  it('calculates their remaining time alive in mercury years', function(){
-    expect(newPerson.expectancy.timeLeft()).toEqual(220);
-    expect(olderPerson.expectancy.timeLeft()).toEqual(-336);
+// 4
+  it('calculates their remaining time or extra time alive for all planets', function(){
+    newPerson.grimReaper();
+    olderPerson.grimReaper();
+    expect(newPerson.time).toEqual([170, 66, 41, 22, 3]);
+    expect(olderPerson.time).toEqual([400, 154, 96, 51, 8]);
+
   });
 
 //5
-  it('calculates their remaining time alive in venus years', function(){
-    expect(newPerson.expectancy.timeLeft()).toEqual(85);
-    expect(olderPerson.expectancy.timeLeft()).toEqual(-141);
-  });
-
-//6
-  it('calculates their remaining time alive in mars years', function(){
-    expect(newPerson.expectancy.timeLeft()).toEqual(28);
-    expect(olderPerson.expectancy.timeLeft()).toEqual(-46);
-  });
-
-//7
-  it('calculates their remaining time alive in jupiter years', function(){
-    expect(newPerson.expectancy.timeLeft()).toEqual(4);
-    expect(olderPerson.expectancy.timeLeft()).toEqual(-7);
-  });
-
-//8
   it('prompts the user to enter a non-negative age if their age is below 0', function(){
     expect(negativeAge.grimReaper()).toEqual("You're -27? A regular Benjamin Button. Try entering a non-negative age.")
   });
