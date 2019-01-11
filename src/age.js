@@ -24,9 +24,7 @@ class Age {
   }
 
   planetAgeModifier(modifier){
-    const msInYear = 31536000000;
-
-    return Math.floor(((this.inputDate - this.birthDate) / msInYear) / modifier);
+    return Math.floor(((this.inputDate - this.birthDate) / 31536000000) / modifier);
   }
 }
 
