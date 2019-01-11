@@ -1,10 +1,11 @@
 class Expectancy {
-  constructor() {
+  constructor(gender) {
     this.mercuryExpectancy = 0;
     this.venusExpectancy = 0;
     this.earthExpectancy = 0;
     this.marsExpectancy = 0;
     this.jupiterExpectancy = 0;
+    this.gender = gender;
   }
 
   expectancyModifier(){
@@ -13,7 +14,7 @@ class Expectancy {
     const marsModifier = 1.88;
     const jupiterModifier = 11.86;
 
-    const earthExpectancy = 80;
+    const earthExpectancy = this.expectancyCalculator();
 
     this.mercuryExpectancy = Math.floor(earthExpectancy / mercuryModifier);
     this.venusExpectancy = Math.floor(earthExpectancy / venusModifier);
@@ -25,6 +26,12 @@ class Expectancy {
   expectancyCalculator(){
     let calculatedEarthExpectancy = 0;
 
+    if (this.gender === "male") {
+      calculatedEarthExpectancy = 68.3;
+    }
+    else {
+      calculatedEarthExpectancy = 72.6;
+    }
 
     return calculatedEarthExpectancy;
   }

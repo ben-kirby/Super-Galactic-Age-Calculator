@@ -1,4 +1,4 @@
-import { Person } from './../src/age.js';
+import { Person } from './../src/person.js';
 
 describe('Person', function(){
 
@@ -6,8 +6,8 @@ describe('Person', function(){
   let olderPerson;
 
   beforeEach(function(){
-    newPerson = new Person("1991-07-24", "2019-01-11", "male"); //(27)
-    olderPerson = new Person("1850-07-24", "2019-01-11", "female"); //168
+    newPerson = new Person("1991-07-24", "2019-01-11", "male"); //27 years old
+    olderPerson = new Person("1850-07-24", "2019-01-11", "female"); //168 years old
   });
 
   it('takes a date and stores it as a date object', function(){
@@ -52,12 +52,12 @@ describe('Person', function(){
   });
 
   it('calculates their remaining time alive on all planets', function(){
-    newPerson.lifeExpectancy.expectancyModifier();
-    expect(newPerson.lifeExpectancy.mercuryExpectancy).toEqual(333);
-    expect(newPerson.lifeExpectancy.venusExpectancy).toEqual(129);
-    expect(newPerson.lifeExpectancy.earthExpectancy).toEqual(80);
-    expect(newPerson.lifeExpectancy.marsExpectancy).toEqual(42);
-    expect(newPerson.lifeExpectancy.jupiterExpectancy).toEqual(6);
+    newPerson.expectancy.expectancyModifier();
+    expect(newPerson.expectancy.mercuryExpectancy).toEqual(284);
+    expect(newPerson.expectancy.venusExpectancy).toEqual(110);
+    expect(newPerson.expectancy.earthExpectancy).toEqual(68);
+    expect(newPerson.expectancy.marsExpectancy).toEqual(36);
+    expect(newPerson.expectancy.jupiterExpectancy).toEqual(5);
   });
 
   it('calculates their remaining time alive in mercury years', function(){

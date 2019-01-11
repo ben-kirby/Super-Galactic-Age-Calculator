@@ -1,5 +1,5 @@
 import {Age} from './age';
-import {Expectancy} './expectancy';
+import {Expectancy} from './expectancy';
 
 class Person {
   constructor(birthDate, inputDate, gender) {
