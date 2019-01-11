@@ -20,9 +20,9 @@ class Age {
   }
 
   earthAgeCalculator(){
-    const calculatedEarthAge = Math.floor((((this.inputDate - this.birthDate) / 31536000000)));
-    this.earthAge = calculatedEarthAge;
-    return calculatedEarthAge;
+    const preciseEarthAge = (this.inputDate - this.birthDate) / 31536000000;
+    this.earthAge = Math.floor(calculatedEarthAge);
+    return preciseEarthAge;
   }
 
   marsAgeCalculator(){
