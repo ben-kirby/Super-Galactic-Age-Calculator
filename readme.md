@@ -1,5 +1,5 @@
 # Super Galactic Age Calculator 🚀🛸🌌
-Super galactic age calculator is a JS app that lets you figure out your age on other planets in the solar system, you life expectancy on that planet, and how long you have left to live (or how long youve been overstaying your welcome).
+Super galactic age calculator is a JS app that lets you figure out your age on other planets in the solar system, your life expectancy on that planet, and how long you have left to live (or how long you've been overstaying your welcome).
 
 # New Features!
 
